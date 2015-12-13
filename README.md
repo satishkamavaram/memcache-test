@@ -1,4 +1,3 @@
-
 Memcached caching framework load test using JDK8
 
 Output with 20 concurrent threads each doing 100 writes and 100 reads.
