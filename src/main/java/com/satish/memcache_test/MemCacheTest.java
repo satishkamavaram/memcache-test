@@ -1,5 +1,7 @@
 package com.satish.memcache_test;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -28,8 +30,8 @@ public class MemCacheTest
        XMemcachedClientBuilder xmemcache = new XMemcachedClientBuilder("localhost:11211");
        MemcachedClient memCache = xmemcache.build();
       
-      
-       List<Integer> listOfExecutors = Arrays.asList(200,200);
+       memCache.flushAll();
+       List<Integer> listOfExecutors = Arrays.asList(20);
        //Approach in JDK7 and below
    /*    ExecutorService es = null;
        Future<Integer> future = null;
@@ -41,6 +43,8 @@ public class MemCacheTest
     	   future = es.submit(new MemeCacheThread(memCache));
     	   listOfFutures.add(future);
        }*/
+       
+       System.out.println("Date        Time          TotalWrites   WriteTime  TotalReads    ReadTime  ReadHits  ReadMisses ThreadName");
        
        //JDK8 - Functional way writing code.
        //Geting list of all executors based on list of executors to be created with different thread count (In realtime , we will have only executor service)
