@@ -92,6 +92,7 @@ public class MemCacheTest
     	for(int i = 0;i<tpe.getCorePoolSize();i++){
     	 	//System.out.println("submitting task");
     	list.add(es.submit(new MemeCacheThread(memCache)));
+    	list.add(es.submit(new MemeCacheReadThread(memCache)));
     	}
     	listOffutures.put(es, list);
     	return listOffutures;

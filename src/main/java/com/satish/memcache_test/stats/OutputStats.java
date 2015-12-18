@@ -30,7 +30,7 @@ public class OutputStats extends AbstractCaptureStats implements CaptureStats
 					+writes+String.format("%"+ getSpaces(13,writes) +"s", " ")+
 					reads
 					+String.format("%"+ getSpaces(12,reads) +"s", " ")+
-					readHits+String.format("%"+ getSpaces(10,reads) +"s", " ")+readMisses);
+					readHits+String.format("%"+ getSpaces(10,readHits) +"s", " ")+readMisses);
 			updateLocalCache();
 		//	System.out.println(memCache.toString());
 			try {

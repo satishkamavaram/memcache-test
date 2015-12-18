@@ -26,8 +26,89 @@ public class MemeCacheThread  implements Callable<Integer> {
 		long id = 0;
 		long time = 0;
 		String key  = null;
-		int totalcalls = 500;
-		
+		int totalcalls = 200;
+		String value = "ssssssssssslkkssssssssssssssssssssssssssssssss"+
+				"sdfkdjslslkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "lksdjfalllllllllllllllllllllllllllllllllll"
+				+ "lsjkafkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllfjjjjjjjjjjjjjjjjjjjjj"
+				+ "sldkfjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+				+ "jhkjjjjjjjjjjjjjjjjjjjjj"+"ssssssssssslkkssssssssssssssssssssssssssssssss"+
+				"sdfkdjslslkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "lksdjfalllllllllllllllllllllllllllllllllll"
+				+ "lsjkafkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllfjjjjjjjjjjjjjjjjjjjjj"
+				+ "sldkfjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+				+ "jhkjjjjjjjjjjjjjjjjjjjjj"+"ssssssssssslkkssssssssssssssssssssssssssssssss"+
+				"sdfkdjslslkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "lksdjfalllllllllllllllllllllllllllllllllll"
+				+ "lsjkafkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllfjjjjjjjjjjjjjjjjjjjjj"
+				+ "sldkfjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+				+ "jhkjjjjjjjjjjjjjjjjjjjjjssssssssssslkkssssssssssssssssssssssssssssssss"+
+				"sdfkdjslslkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "lksdjfalllllllllllllllllllllllllllllllllll"
+				+ "lsjkafkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllfjjjjjjjjjjjjjjjjjjjjj"
+				+ "sldkfjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+				+ "jhkjjjjjjjjjjjjjjjjjjjjj"+"ssssssssssslkkssssssssssssssssssssssssssssssss"+
+				"sdfkdjslslkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "lksdjfalllllllllllllllllllllllllllllllllll"
+				+ "lsjkafkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllfjjjjjjjjjjjjjjjjjjjjj"
+				+ "sldkfjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+				+ "jhkjjjjjjjjjjjjjjjjjjjjjssssssssssslkkssssssssssssssssssssssssssssssss"+
+				"sdfkdjslslkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "lksdjfalllllllllllllllllllllllllllllllllll"
+				+ "lsjkafkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllfjjjjjjjjjjjjjjjjjjjjj"
+				+ "sldkfjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+				+ "jhkjjjjjjjjjjjjjjjjjjjjj"+"ssssssssssslkkssssssssssssssssssssssssssssssss"+
+				"sdfkdjslslkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "lksdjfalllllllllllllllllllllllllllllllllll"
+				+ "lsjkafkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllfjjjjjjjjjjjjjjjjjjjjj"
+				+ "sldkfjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+				+ "jhkjjjjjjjjjjjjjjjjjjjjj"+"ssssssssssslkkssssssssssssssssssssssssssssssss"+
+				"sdfkdjslslkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "lksdjfalllllllllllllllllllllllllllllllllll"
+				+ "lsjkafkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllfjjjjjjjjjjjjjjjjjjjjj"
+				+ "sldkfjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+				+ "jhkjjjjjjjjjjjjjjjjjjjjj"+
+				"sdfkdjslslkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "lksdjfalllllllllllllllllllllllllllllllllll"
+				+ "lsjkafkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllfjjjjjjjjjjjjjjjjjjjjj"
+				+ "sldkfjjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+				+ "klllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+				+ "jhkjjjjjjjjjjjjjjjjjjjjj";
 		List<String> listOfkeys = new ArrayList<>();
 		//System.out.println("adding key value to memcache");
 		//adding keys
@@ -40,12 +121,12 @@ public class MemeCacheThread  implements Callable<Integer> {
 			time = System.nanoTime();
 			key  = String.valueOf(id+time);
 		//System.out.println("...");
-			this.memCache.add(key, 0, String.valueOf(key).concat(Thread.currentThread().getName()));
+			this.memCache.add(key, 0, String.valueOf(key).concat(Thread.currentThread().getName()).concat(value));
 			MemeStatsRegistry.incrementWrite();
 			listOfkeys.add(key);
 		}
 		//long totalTimeWrites = System.nanoTime() - writeStartTime;
-		
+		//Thread.sleep(3000);
 		//System.out.println("getting key value from memcache");
 		//Reading Keys
 		//long readStartTime = System.nanoTime();
