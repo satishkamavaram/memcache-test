@@ -1,7 +1,5 @@
 package com.satish.memcache_test;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -14,6 +12,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
+
+import com.satish.memcache_test.stats.CaptureStats;
+import com.satish.memcache_test.stats.OutputStats;
 
 import net.rubyeye.xmemcached.MemcachedClient;
 import net.rubyeye.xmemcached.XMemcachedClientBuilder;
@@ -29,9 +30,12 @@ public class MemCacheTest
     {
        XMemcachedClientBuilder xmemcache = new XMemcachedClientBuilder("localhost:11211");
        MemcachedClient memCache = xmemcache.build();
-      
        memCache.flushAll();
-       List<Integer> listOfExecutors = Arrays.asList(20);
+       
+       CaptureStats captureStats = new OutputStats(1);
+       new Thread(captureStats).start();
+       
+       List<Integer> listOfExecutors = Arrays.asList(500);
        //Approach in JDK7 and below
    /*    ExecutorService es = null;
        Future<Integer> future = null;
@@ -44,7 +48,7 @@ public class MemCacheTest
     	   listOfFutures.add(future);
        }*/
        
-       System.out.println("Date        Time          TotalWrites   WriteTime  TotalReads    ReadTime  ReadHits  ReadMisses ThreadName");
+     //  System.out.println("Date        Time          TotalWrites   WriteTime  TotalReads    ReadTime  ReadHits  ReadMisses ThreadName");
        
        //JDK8 - Functional way writing code.
        //Geting list of all executors based on list of executors to be created with different thread count (In realtime , we will have only executor service)
@@ -52,12 +56,13 @@ public class MemCacheTest
       BiFunction<ExecutorService, MemcachedClient, Future<Integer>> bi = (ExecutorService executorService ,MemcachedClient memClient ) ->  {
     	  return executorService.submit(new MemeCacheThread(memClient));};
       //Creating and Submitting tasks.
-      List<Map<ExecutorService,List<Future<Integer>>>> listOfallExecutorsAndItsFutures = listOfexecutorServices.stream().map((ExecutorService es1) -> MemCacheTest.getFixedThreads(es1, memCache))
+      List<Map<ExecutorService,List<Future<Integer>>>> listOfallExecutorsAndItsFutures = listOfexecutorServices.stream()
+    		  .map((ExecutorService es1) -> MemCacheTest.getFixedThreads(es1, memCache))
     		 .collect(Collectors.toList());
       //Getting Async future results.
       long count = listOfallExecutorsAndItsFutures.stream().map(MemCacheTest::getFutures).flatMap(l ->l.stream()).mapToInt(MemCacheTest::getFutureResponse).sum();
      //listOfFutures.stream().mapToInt( App::getFutureResponse).count();
-     System.out.println("Total Number of Read and Write opertions to MemCache :::"+count);
+   //  System.out.println("Total Number of Read and Write opertions to MemCache :::"+count);
 	
     }
     
@@ -83,9 +88,9 @@ public class MemCacheTest
     	Map<ExecutorService,List<Future<Integer>>> listOffutures = new HashMap<>();
     	List<Future<Integer>> list = new ArrayList<>();
     	ThreadPoolExecutor tpe = (ThreadPoolExecutor)es;
-    	//System.out.println("tpe"+tpe.getPoolSize());
+    //	System.out.println("tpe"+tpe.getCorePoolSize());
     	for(int i = 0;i<tpe.getCorePoolSize();i++){
-    	//	System.out.println("submitting task");
+    	 	//System.out.println("submitting task");
     	list.add(es.submit(new MemeCacheThread(memCache)));
     	}
     	listOffutures.put(es, list);
