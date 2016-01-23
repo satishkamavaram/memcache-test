@@ -1,6 +1,6 @@
-Memcached distributed caching framework load testingusing JDK8.
+Memcached distributed caching framework load testing using JDK8.
 
-MemCacheTest.java is the launcher class where following actions taskes place :
+MemCacheTest.java is a launcher class where following actions taskes place :
  1. Connecting to local memcached server.
  2. Lauching a thread for logging the stats to console 
  3. Creating ExecurtorService with fixed number of threads.
